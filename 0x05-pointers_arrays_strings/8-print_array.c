@@ -2,9 +2,9 @@
 
 /**
 * print_array - a function that prints n elements of an array
-* @a: array name
-* @n: is the number of elements OF the array to be printed
-* Return: a and n inputs
+* @a: this is the name of an array
+* @n: number of array to be printed
+* Return: a & n
 */
 void print_array(int *a, int n)
 {
