@@ -2,7 +2,8 @@
  * _strpbrk - Entry point
  * @s: input
  * @accept: input
- * Return: Always 0 (Success)
+ * Return: Pointer to the first occurrence of any character from 'accept' in 's',
+ *         or NULL if no matching characters are found
  */
 char *_strpbrk(char *s, char *accept)
 
