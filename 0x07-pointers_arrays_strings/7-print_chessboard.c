@@ -1,28 +1,21 @@
 #include "main.h"
 
 /**
- * _strstr - Finds the first occurrence of a substring in a string
- * @haystack: The string to search in
- * @needle: The substring to find
+ * print_chessboard - Prints the chessboard
+ * @board: The 2D array representing the chessboard
  *
- * Return: Always 0
+ * Return: void
  */
+void print_chessboard(char (*board)[8])
+{
+int row, col;
 
-char *_strstr(char *haystack, char *needle)
+for (row = 0; row < 8; row++)
 {
-for (; *haystack != '\0'; haystack++)
+for (col = 0; col < 8; col++)
 {
-char *h = haystack;
-char *n = needle;
-
-while (*h == *n && *n != '\0')
-{
-h++;
-n++;
+_putchar(board[row][col]);
 }
-if (*n == '\0')
-return (haystack);
+_putchar('\n');
 }
-
-return (NULL);
 }
