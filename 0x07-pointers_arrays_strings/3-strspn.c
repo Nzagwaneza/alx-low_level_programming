@@ -9,24 +9,24 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int length = 0;
-	int i, j;
+	unsigned int n = 0;
+	int i;
 
-	iwhile(*s)
+	while (*s)
 	{
 		for (i = 0; accept[i]; i++)
 		{
 			if (*s == accept[i])
 			{
-				length++;
+				n++;
 				break;
 			}
 			else if (accept[i + 1] == '\0')
 			{
-				return (length);
+				return (n);
 			}
 		}
 		s++;
 	}
-	return (length);
+	return (n);
 }
