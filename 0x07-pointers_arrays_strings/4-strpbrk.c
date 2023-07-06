@@ -5,8 +5,8 @@
  * Return: Pointer to the first occurrence of any character from 'accept' in 's',
  *         or NULL if no matching characters are found
  */
-char *_strpbrk(char *s, char *accept)
 
+char *_strpbrk(char *s, char *accept)
 {
 	int k;
 
@@ -20,5 +20,5 @@ char *_strpbrk(char *s, char *accept)
 		s++;
 	}
 
-	return (NULL);
+	return ('\0');
 }
