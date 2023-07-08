@@ -29,3 +29,16 @@ if (*s == '\0')
 return (0);
 return (1 + calculate_length(s + 1));
 }
+
+/**
+ * is_palindrome - Checks if a string is a palindrome.
+ * @s: The string to check.
+ *
+ * Return: 1 if it is a palindrome, 0 if it's not.
+ */
+int is_palindrome(char *s)
+{
+if (check_palindrome(s, 0, calculate_length(s)) == 1)
+return (1);
+return (0);
+}
