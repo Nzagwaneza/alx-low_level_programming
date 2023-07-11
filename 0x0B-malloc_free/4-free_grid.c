@@ -2,24 +2,19 @@
 #include "holberton.h"
 
 /**
- * free_grid - frees the memory allocated for the grid
- * created by alloc_grid()
- * @grid: grid to free
- * @height: height of the grid
+ * free_grid - Frees the memory allocated for the grid created by alloc_grid()
+ * @grid: Grid to free
+ * @height: Height of the grid
  */
 void free_grid(int **grid, int height)
 {
-if (grid == NULL || height <= 0)
+int i;
+
+if (grid == NULL || height == 0)
 return;
 
-for (int i = 0; i < height; i++)
-{
-if (grid[i] != NULL)
-{
+for (i = 0; i < height; i++)
 free(grid[i]);
-grid[i] = NULL
-}
-}
 
 free(grid);
 }
