@@ -2,14 +2,13 @@
 #include "holberton.h"
 
 /**
- * **create_2d_array - creates a two-dimensional array of ints
- * @width: width of the matrix
- * @height: height of the matrix
+ * alloc_grid - Creates a two-dimensional matrix of integers.
+ * @width: Width of the matrix.
+ * @height: Height of the matrix.
  *
- * Return: pointer to the created matrix (Success)
- * or NULL (Error)
+ * Return: Pointer to the created matrix (Success), or NULL (Error).
  */
-int **create_2d_array(int width, int height)
+int **alloc_grid(int width, int height)
 {
 	int **matrix;
 	int i, j;
@@ -21,13 +20,14 @@ int **create_2d_array(int width, int height)
 
 	if (matrix == NULL)
 		return (NULL);
+
 	for (i = 0; i < height; i++)
 	{
 		matrix[i] = (int *)malloc(sizeof(int) * width);
 		if (matrix[i] == NULL)
 		{
 			free(matrix);
-			for (j = 0; j <= i; j++)
+			for (j = 0; j < i; j++)
 				free(matrix[j]);
 			return (NULL);
 		}
@@ -40,5 +40,6 @@ int **create_2d_array(int width, int height)
 			matrix[i][j] = 0;
 		}
 	}
+
 	return (matrix);
 }
