@@ -5,7 +5,7 @@
 #include <string.h>
 
 /**
- * _strcat - concantenates 2 strings 
+ * _strcat - concantenates 2 string
  * @dest: destination string
  * @src: source string
  *
@@ -14,5 +14,5 @@
 
 char *_strcat(char *dest, char *src)
 {
-    return strcat(dest, src);
+return (strcat(dest, src));
 }

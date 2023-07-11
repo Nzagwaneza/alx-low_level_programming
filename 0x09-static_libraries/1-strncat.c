@@ -5,14 +5,15 @@
 #include <string.h>
 
 /**
- * _strcat - concantenates 2 strings 
+ * _strncat - concatenates two strings
  * @dest: destination string to append
  * @src: source string to append
  * @n: max number of bytes to append
- * return: it will return strcat
+ *
+ * Return: pointer to the resulting string
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-    return strncat(dest, src, n);
+return (strncat(dest, src, n));
 }
