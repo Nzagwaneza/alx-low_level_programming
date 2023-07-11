@@ -1,45 +1,47 @@
+#include "main.h"
 #include <stdlib.h>
-#include "holberton.h"
 
 /**
- * alloc_grid - Creates a two-dimensional array of integers.
- * @width: Width of the matrix.
- * @height: Height of the matrix.
+ * str_concat - Concatenates two strings.
+ * @s1: First string.
+ * @s2: Second string.
  *
- * Return: Pointer to the created matrix (Success), or NULL (Error)
+ * Return: Pointer to the concatenated string (Success), or NULL (Error)
  */
-int **alloc_grid(int width, int height)
+char *str_concat(char *s1, char *s2)
 {
-	int **array;
+	char *concat;
 	int i, j;
 
-	if (height <= 0 || width <= 0)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	i = j = 0;
+	while (s1[i] != '\0')
+		i++;
+	while (s2[j] != '\0')
+		j++;
+
+	concat = malloc(sizeof(char) * (i + j + 1));
+	if (concat == NULL)
 		return (NULL);
 
-	array = (int **)malloc(sizeof(int *) * height);
-
-	if (array == NULL)
-		return (NULL);
-
-	for (i = 0; i < height; i++)
+	i = j = 0;
+	while (s1[i] != '\0')
 	{
-		array[i] = (int *)malloc(sizeof(int) * width);
-		if (array[i] == NULL)
-		{
-			free(array);
-			for (j = 0; j < i; j++)
-				free(array[j]);
-			return (NULL);
-		}
+		concat[i] = s1[i];
+		i++;
 	}
 
-	for (i = 0; i < height; i++)
+	while (s2[j] != '\0')
 	{
-		for (j = 0; j < width; j++)
-		{
-			array[i][j] = 0;
-		}
+		concat[i] = s2[j];
+		i++;
+		j++;
 	}
+	concat[i] = '\0';
 
-	return (array);
+	return (concat);
 }
